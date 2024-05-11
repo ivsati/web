@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quieres conocer la información de WhatsApp de Iván S.T.?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .no {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>¿Quieres conocer la información de WhatsApp de Iván S.T.?</h1>
+    <button class="yes" onclick="preguntaPrueba()">Sí</button>
+    <button class="no" onclick="disfrutarDia()">No</button>
+    <div id="message"></div>
+    <img src="captura.png" id="whatsappImage" style="display:none; max-width: 80%; margin-top: 20px;" alt="Imagen de WhatsApp de Iván S.T.">
+  </div>
+
+  <script>
+    function preguntaPrueba() {
+      try {
+        var respuesta1 = prompt("¿Cuál es la capital de Letonia?");
+        var respuesta2 = prompt("¿En qué país nació el cantante Bryan Adams?");
+        var respuesta3 = prompt("¿Cuál es la capital de Uganda?");
+        
+        if (respuesta1 && respuesta2 && respuesta3) {
+          respuesta1 = respuesta1.toLowerCase();
+          respuesta2 = respuesta2.toLowerCase();
+          respuesta3 = respuesta3.toLowerCase();
+          
+          if (respuesta1 === "riga" && (respuesta2 === "canadá" || respuesta2 === "canada") && respuesta3 === "kampala") {
+            mostrarMensaje("¡Todas las respuestas son correctas! Aquí está la información de WhatsApp de Iván S.T. solamente tienes que ejecutar el código de la fotografía y podrás verlo.");
+            document.getElementById("whatsappImage").style.display = "block";
+          } else {
+            mostrarMensaje("Lo siento, parece que no mereces ver la información.");
+          }
+        } else {
+          mostrarMensaje("No has respondido a todas las preguntas.");
+        }
+      } catch (error) {
+        mostrarMensaje("Ha ocurrido un error: " + error.message);
+      }
+    }
+
+    function disfrutarDia() {
+      mostrarMensaje("¡Disfruta del día!");
+    }
+
+    function mostrarMensaje(mensaje) {
+      document.getElementById("message").textContent = mensaje;
+    }
+  </script>
+</body>
+</html>
