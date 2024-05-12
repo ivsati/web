@@ -1,0 +1,19 @@
+fun ocultarFrases(palabra: String): String {
+    return palabra.map {
+        when {
+            it.isLetter() -> (it - 2).toString()
+            else -> it.toString()
+        }
+    }.joinToString("").map { it.toInt().toChar() }.joinToString("")
+}
+
+fun main() {
+    val frasesOriginales = "Rtqitcookpi hcp.\n " +
+            "K rtcevkeg vjg Mqvnkp ncpiwcig.\n " +
+            "Hcxqtkvg oqxkg: \"Ekfcfg fg Fgwu\". \n " +
+            "Hcxqtkvg uqpi: Uwoogt qh 69. \n" +
+            " Hcxqtkvg rjtcug: Kh K jcxg ocpcigf vq ugg hwtvjgt kv jcu dggp dgecwug K jcxg uvqqf qp vjg ujqwnfgtu qh ikcpvu"
+    val frasesModificadas = ocultarFrases(frasesOriginales)
+    println("Frases originales: $frasesOriginales")
+    println("Frases modificadas: $frasesModificadas")
+}
