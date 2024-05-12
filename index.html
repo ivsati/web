@@ -56,7 +56,7 @@
     function preguntaPrueba() {
       try {
         var respuesta1 = prompt("¿Cuál es la capital de Letonia?");
-        var respuesta2 = prompt("¿En qué país nació el cantante Bryan Adams?");
+        var respuesta2 = prompt("¿Cuál es la raíz cuadrada de 144?");
         var respuesta3 = prompt("¿Cuál es la capital de Uganda?");
         
         if (respuesta1 && respuesta2 && respuesta3) {
@@ -64,7 +64,7 @@
           respuesta2 = respuesta2.toLowerCase();
           respuesta3 = respuesta3.toLowerCase();
           
-          if (respuesta1 === "riga" && (respuesta2 === "canadá" || respuesta2 === "canada") && respuesta3 === "kampala") {
+          if (respuesta1 === "riga" && (respuesta2 === "12" || respuesta2 === "doce") && respuesta3 === "kampala") {
             mostrarMensaje("¡Todas las respuestas son correctas! Aquí está la información de WhatsApp de Iván S.T. solamente tienes que ejecutar el código de la fotografía y podrás verlo.");
             document.getElementById("whatsappImage").style.display = "block";
           } else {
@@ -89,6 +89,3 @@
 </body>
 </html>
 
-   
- 
-  
