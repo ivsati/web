@@ -41,6 +41,14 @@
       background-color: #f44336;
       color: white;
     }
+    /* Estilos adicionales */
+    #downloadLink {
+      font-size: 20px; /* Tamaño de letra más grande */
+    }
+    #whatsappImage {
+      max-width: 60%; /* Reducción del tamaño de la imagen */
+      margin-top: 10px; /* Ajuste del margen superior */
+    }
   </style>
 </head>
 <body>
@@ -49,7 +57,11 @@
     <button class="yes" onclick="preguntaPrueba()">Sí</button>
     <button class="no" onclick="disfrutarDia()">No</button>
     <div id="message"></div>
-    <img src="captura.png" id="whatsappImage" style="display:none; max-width: 80%; margin-top: 20px;" alt="Imagen de WhatsApp de Iván S.T.">
+    <img src="captura.png" id="whatsappImage" style="display:none;" alt="Imagen de WhatsApp de Iván S.T.">
+
+
+<a id="downloadLink" href="codigo.txt" style="display:none;" download>Acceder al código en formato TXT</a>
+
   </div>
 
   <script>
@@ -60,13 +72,14 @@
         var respuesta3 = prompt("¿Cuál es la capital de Uganda?");
         
         if (respuesta1 && respuesta2 && respuesta3) {
-          respuesta1 = respuesta1.toLowerCase();
-          respuesta2 = respuesta2.toLowerCase();
-          respuesta3 = respuesta3.toLowerCase();
+          respuesta1 = respuesta1.trim().toLowerCase();
+          respuesta2 = respuesta2.trim().toLowerCase();
+          respuesta3 = respuesta3.trim().toLowerCase();
           
-          if (respuesta1 === "riga" && (respuesta2 === "12" || respuesta2 === "doce") && respuesta3 === "kampala") {
+          if (respuesta1 === "riga" && (respuesta2 === "12" || respuesta2 === "doce" || respuesta2 === "12 ") && respuesta3 === "kampala") {
             mostrarMensaje("¡Todas las respuestas son correctas! Aquí está la información de WhatsApp de Iván S.T. solamente tienes que ejecutar el código de la fotografía y podrás verlo.");
             document.getElementById("whatsappImage").style.display = "block";
+            document.getElementById("downloadLink").style.display = "block";
           } else {
             mostrarMensaje("Lo siento, parece que no mereces ver la información.");
           }
@@ -88,4 +101,3 @@
   </script>
 </body>
 </html>
-
